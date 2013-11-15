@@ -2,6 +2,7 @@
 
 module.exports = function(grunt) {
     grunt.initConfig({
+        app: 'app', // path to app files
         pkg: grunt.file.readJSON('package.json'),
 
         watch: {
@@ -15,19 +16,19 @@ module.exports = function(grunt) {
                     livereload: '<%= connect.options.livereload %>'
                 },
                 files: [
-                    '*.html',
-                    'js/*.js',
-                    'css/*.css',
-                    'img/*.{gif,jpg,jpeg,png,svg,webp}'
+                    '<%= app %>/*.html',
+                    '<%= app %>/js/*.js',
+                    '<%= app %>/css/*.css',
+                    '<%= app %>/img/*.{gif,jpg,jpeg,png,svg,webp}'
                 ]
             }
         },
 
         compass: {
             options: {
-                sassDir: 'sass',
-                cssDir: 'css',
-                config: 'config.rb'
+                sassDir: '<%= app %>/sass',
+                cssDir: '<%= app %>/css',
+                config: '<%= app %>/<%= app %>/config.rb'
             },
             server: {
                 options: {
@@ -47,6 +48,21 @@ module.exports = function(grunt) {
             ]
         },
 
+        csslint: {
+            strict: {
+                options: {
+                    import: 2
+                },
+                src: ['<%= app %>/css/*.css']
+            },
+            lax: {
+                options: {
+                    import: false
+                },
+                src: ['<%= app %>/css/*.css']
+            }
+        },
+
         connect: {
             options: {
                 port: 9000,
@@ -56,7 +72,7 @@ module.exports = function(grunt) {
             livereload: {
                 options: {
                     open: true,
-                    base: ['.']
+                    base: ['<%= app %>']
                 }
             }
         }
@@ -67,6 +83,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-csslint');
 
     grunt.registerTask('serve', ['jshint', 'connect:livereload', 'watch']);
     grunt.registerTask('default', ['jshint']);
