@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 
         watch: {
             compass: {
-                files: ['sass/*.scss'],
+                files: ['<%= app %>/sass/*.scss'],
                 tasks: ['compass:server']
             },
 
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
             options: {
                 sassDir: '<%= app %>/sass',
                 cssDir: '<%= app %>/css',
-                config: '<%= app %>/<%= app %>/config.rb'
+                config: '<%= app %>/config.rb'
             },
             server: {
                 options: {
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
             },
             all: [
                 'Gruntfile.js',
-                'js/*.js'
+                '<%= app %>/js/*.js'
             ]
         },
 
