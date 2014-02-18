@@ -1,6 +1,10 @@
 'use strict';
 
 module.exports = function(grunt) {
+
+    require('load-grunt-tasks')(grunt);
+    require('time-grunt')(grunt);
+
     grunt.initConfig({
         app: 'app', // path to app files
         pkg: grunt.file.readJSON('package.json'),
@@ -25,15 +29,42 @@ module.exports = function(grunt) {
         },
 
         compass: {
-            options: {
-                sassDir: '<%= app %>/sass',
-                cssDir: '<%= app %>/css',
-                config: '<%= app %>/config.rb'
+            dev: {
+                options: {
+                    sassDir: '<%= app %>/sass',
+                    cssDir: '<%= app %>/css',
+                    config: '<%= app %>/config.rb',
+                    environment: 'development'
+                }
             },
+
+            prod: {
+                options: {
+                    sassDir: '<%= app %>/sass',
+                    cssDir: '<%= app %>/build/css',
+                    outputStyle: 'compressed',
+                    noLineComments: true,
+                    environment: 'production'
+                }
+            },
+
             server: {
                 options: {
                     debugInfo: true
                 }
+            }
+        },
+
+        clean: [ '<%= app %>/build/' ],
+
+        uglify: {
+            options: {
+                banner: '/********************** <%= pkg.name %> - v<%= pkg.version %> - ' +
+                    '<%= grunt.template.today("dd-mm-yyyy") %> **********************/\n'
+            },
+            dist: {
+                src: ['<%= app %>/js/*.js'], // not vendor files
+                dest: '<%= app %>/build/js/app.min.js'
             }
         },
 
@@ -79,12 +110,13 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-csslint');
+    // grunt.loadNpmTasks('grunt-contrib-watch');
+    // grunt.loadNpmTasks('grunt-contrib-compass');
+    // grunt.loadNpmTasks('grunt-contrib-connect');
+    // grunt.loadNpmTasks('grunt-contrib-jshint');
+    // grunt.loadNpmTasks('grunt-contrib-csslint');
 
     grunt.registerTask('default', ['connect:livereload', 'watch']);
     grunt.registerTask('lint', ['jshint', 'csslint:lax']);
+    grunt.registerTask('build', ['clean', 'newer:uglify', 'compass:prod']);
 };

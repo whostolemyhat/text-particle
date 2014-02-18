@@ -1,5 +1,5 @@
 @media print {
-  /* line 2, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/print\.scss}line{font-family:\000032}}
   * {
     background: transparent !important;
     color: #000 !important;
@@ -8,18 +8,18 @@
     text-shadow: none !important;
   }
 
-  /* line 10, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/print\.scss}line{font-family:\0000310}}
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 14, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/print\.scss}line{font-family:\0000314}}
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 18, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/print\.scss}line{font-family:\0000318}}
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -27,33 +27,33 @@
   /*
    * Don't show links for images, or javascript/internal links
    */
-  /* line 28, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/print\.scss}line{font-family:\0000328}}
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
   }
 
-  /* line 33, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/print\.scss}line{font-family:\0000333}}
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-  /* line 38, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/print\.scss}line{font-family:\0000338}}
   thead {
     display: table-header-group;
     /* h5bp.com/t */
   }
 
-  /* line 43, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/print\.scss}line{font-family:\0000343}}
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 47, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/print\.scss}line{font-family:\0000347}}
   img {
     max-width: 100% !important;
   }
@@ -62,7 +62,7 @@
     margin: 0.5cm;
 }
 
-  /* line 57, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/print\.scss}line{font-family:\0000357}}
   p,
   h2,
   h3 {
@@ -70,7 +70,7 @@
     widows: 3;
   }
 
-  /* line 63, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/print\.scss}line{font-family:\0000363}}
   h2,
   h3 {
     page-break-after: avoid;
