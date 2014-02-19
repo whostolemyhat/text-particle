@@ -29,22 +29,24 @@ module.exports = function(grunt) {
         },
 
         compass: {
+            options: {
+                sassDir: '<%= app %>/sass',
+                cssDir: '<%= app %>/css',
+            },
+
             dev: {
                 options: {
-                    sassDir: '<%= app %>/sass',
-                    cssDir: '<%= app %>/css',
-                    config: '<%= app %>/config.rb',
+
+                    outputStyle: 'expanded',
                     environment: 'development'
                 }
             },
 
             prod: {
                 options: {
-                    sassDir: '<%= app %>/sass',
                     cssDir: '<%= app %>/build/css',
                     outputStyle: 'compressed',
                     noLineComments: true,
-                    environment: 'production'
                 }
             },
 

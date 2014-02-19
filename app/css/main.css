@@ -420,7 +420,7 @@ button,
 input,
 select,
 textarea {
-  color: #222;
+  color: #444;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000311}}
@@ -434,13 +434,13 @@ html {
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000322}}
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000327}}
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -449,7 +449,7 @@ html {
 /*
  * A better looking default horizontal rule
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000336}}
 hr {
   display: block;
   height: 1px;
@@ -463,7 +463,7 @@ hr {
  * Remove the gap between images, videos, audio and canvas and the bottom of
  * their containers: h5bp.com/i/440
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000353}}
 audio,
 canvas,
 img,
@@ -474,14 +474,14 @@ video {
 /*
  * Remove default fieldset styles.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000361}}
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000368}}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -501,7 +501,7 @@ fieldset {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000393}}
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -510,7 +510,7 @@ fieldset {
   /* 2 */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\0000398}}
 .clearfix:after {
   clear: both;
 }
@@ -519,7 +519,7 @@ fieldset {
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/rubbish\/app-template\/app\/sass\/main\.scss}line{font-family:\00003107}}
 .clearfix {
   *zoom: 1;
 }
