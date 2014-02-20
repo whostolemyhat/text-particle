@@ -10,52 +10,85 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         watch: {
-            compass: {
-                files: ['<%= app %>/sass/*.scss'],
-                tasks: ['compass:server']
+            options: {
+                livereload: true
+            },
+            // compass: {
+            //     files: ['<%= app %>/sass/*.scss'],
+            //     tasks: ['compass:server']
+            // },
+
+            watchsass: {
+                files: ['<%= app %>/sass/**/*.scss'],
+                tasks: ['sass']
             },
 
-            livereload: {
-                options: {
-                    livereload: '<%= connect.options.livereload %>'
-                },
-                files: [
-                    '<%= app %>/*.html',
-                    '<%= app %>/js/**/*.js',
-                    '<%= app %>/css/*.css',
-                    '<%= app %>/img/*.{gif,jpg,jpeg,png,svg,webp}'
-                ]
-            }
+            // livereload: {
+            //     options: {
+            //         livereload: '<%= connect.options.livereload %>'
+            //     },
+            //     files: [
+            //         '<%= app %>/*.html',
+            //         '<%= app %>/js/**/*.js',
+            //         '<%= app %>/css/*.css',
+            //         '<%= app %>/img/*.{gif,jpg,jpeg,png,svg,webp}'
+            //     ]
+            // }
         },
 
-        compass: {
-            options: {
-                sassDir: '<%= app %>/sass',
-                cssDir: '<%= app %>/css',
-            },
-
-            dev: {
+        sass: {
+            all: {
                 options: {
-
-                    outputStyle: 'expanded',
-                    environment: 'development'
+                    // outputStyle: 'expanded',
+                    lineNumbers: true
+                },
+                files: {
+                    '<%= app %>/css/main.css': '<%= app %>/sass/main.scss',
+                    '<%= app %>/css/ie.css': '<%= app %>/sass/ie.scss',
+                    '<%= app %>/css/print.css': '<%= app %>/sass/print.scss'
                 }
             },
-
             prod: {
                 options: {
-                    cssDir: '<%= app %>/build/css',
-                    outputStyle: 'compressed',
-                    noLineComments: true,
-                }
-            },
-
-            server: {
-                options: {
-                    debugInfo: true
+                    // outputStyle: 'compressed',
+                    lineNumbers: false
+                },
+                files: {
+                    '<%= app %>/build/css/main.css': '<%= app %>/sass/main.scss',
+                    '<%= app %>/build/css/ie.css': '<%= app %>/sass/ie.scss',
+                    '<%= app %>/build/css/print.css': '<%= app %>/sass/print.scss'
                 }
             }
         },
+
+        // compass: {
+        //     options: {
+        //         sassDir: '<%= app %>/sass',
+        //         cssDir: '<%= app %>/css',
+        //     },
+
+        //     dev: {
+        //         options: {
+
+        //             outputStyle: 'expanded',
+        //             environment: 'development'
+        //         }
+        //     },
+
+        //     prod: {
+        //         options: {
+        //             cssDir: '<%= app %>/build/css',
+        //             outputStyle: 'compressed',
+        //             noLineComments: true,
+        //         }
+        //     },
+
+        //     server: {
+        //         options: {
+        //             debugInfo: true
+        //         }
+        //     }
+        // },
 
         clean: [ '<%= app %>/build/' ],
 
@@ -118,7 +151,7 @@ module.exports = function(grunt) {
     // grunt.loadNpmTasks('grunt-contrib-jshint');
     // grunt.loadNpmTasks('grunt-contrib-csslint');
 
-    grunt.registerTask('default', ['connect:livereload', 'watch']);
+    grunt.registerTask('default', ['newer:sass', 'connect', 'watch']);
     grunt.registerTask('lint', ['jshint', 'csslint:lax']);
-    grunt.registerTask('build', ['clean', 'newer:uglify', 'compass:prod']);
+    grunt.registerTask('build', ['clean', 'newer:uglify', 'sass:prod']);
 };
