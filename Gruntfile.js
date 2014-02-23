@@ -19,7 +19,13 @@ module.exports = function(grunt) {
             // },
 
             watchsass: {
-                files: ['<%= app %>/sass/**/*.scss'],
+                files: [
+                    '<%= app %>/sass/**/*.scss',
+                    '<%= app %>/*.html',
+                    '<%= app %>/js/**/*.js',
+                    '<%= app %>/css/*.css',
+                    '<%= app %>/img/*.{gif,jpg,jpeg,png,svg,webp}'
+                    ],
                 tasks: ['sass']
             },
 
