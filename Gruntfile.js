@@ -11,39 +11,39 @@ module.exports = function(grunt) {
 
         watch: {
             options: {
-                livereload: true
+                spawn: false
             },
-            // compass: {
-            //     files: ['<%= app %>/sass/*.scss'],
-            //     tasks: ['compass:server']
-            // },
 
             watchsass: {
                 files: [
                     '<%= app %>/sass/**/*.scss',
+                ],
+                tasks: ['newer:sass:dev']
+            },
+
+            scripts: {
+                files: [
+                    '<%= app %>/js/**/*.js'
+                ],
+                tasks: ['jshint'],
+            },
+
+
+            livereload: {
+                options: {
+                    livereload: '<%= connect.options.livereload %>'
+                },
+                files: [
                     '<%= app %>/*.html',
                     '<%= app %>/js/**/*.js',
                     '<%= app %>/css/*.css',
                     '<%= app %>/img/*.{gif,jpg,jpeg,png,svg,webp}'
-                    ],
-                tasks: ['sass']
-            },
-
-            // livereload: {
-            //     options: {
-            //         livereload: '<%= connect.options.livereload %>'
-            //     },
-            //     files: [
-            //         '<%= app %>/*.html',
-            //         '<%= app %>/js/**/*.js',
-            //         '<%= app %>/css/*.css',
-            //         '<%= app %>/img/*.{gif,jpg,jpeg,png,svg,webp}'
-            //     ]
-            // }
+                ]
+            }
         },
 
         sass: {
-            all: {
+            dev: {
                 options: {
                     // outputStyle: 'expanded',
                     lineNumbers: true
@@ -66,35 +66,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-
-        // compass: {
-        //     options: {
-        //         sassDir: '<%= app %>/sass',
-        //         cssDir: '<%= app %>/css',
-        //     },
-
-        //     dev: {
-        //         options: {
-
-        //             outputStyle: 'expanded',
-        //             environment: 'development'
-        //         }
-        //     },
-
-        //     prod: {
-        //         options: {
-        //             cssDir: '<%= app %>/build/css',
-        //             outputStyle: 'compressed',
-        //             noLineComments: true,
-        //         }
-        //     },
-
-        //     server: {
-        //         options: {
-        //             debugInfo: true
-        //         }
-        //     }
-        // },
 
         clean: [ '<%= app %>/build/' ],
 
@@ -139,7 +110,7 @@ module.exports = function(grunt) {
             options: {
                 port: 9000,
                 livereload: 35729,
-                hostname: 'localhost'
+                hostname: 'localhost',
             },
             livereload: {
                 options: {
@@ -151,13 +122,7 @@ module.exports = function(grunt) {
 
     });
 
-    // grunt.loadNpmTasks('grunt-contrib-watch');
-    // grunt.loadNpmTasks('grunt-contrib-compass');
-    // grunt.loadNpmTasks('grunt-contrib-connect');
-    // grunt.loadNpmTasks('grunt-contrib-jshint');
-    // grunt.loadNpmTasks('grunt-contrib-csslint');
-
-    grunt.registerTask('default', ['newer:sass', 'connect', 'watch']);
+    grunt.registerTask('default', ['connect:livereload', 'watch']);
     grunt.registerTask('lint', ['jshint', 'csslint:lax']);
-    grunt.registerTask('build', ['clean', 'newer:uglify', 'sass:prod']);
+    grunt.registerTask('build', ['jshint', 'clean', 'newer:uglify', 'sass:prod']);
 };
