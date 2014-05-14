@@ -403,7 +403,7 @@ body {
    ========================================================================== */
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
-  color: #222;
+  color: #fff;
   font-weight: bold; }
 
 h1, .alpha {
@@ -433,21 +433,21 @@ h6, .zeta {
 /* Links
    ========================================================================== */
 a {
-  color: #fff;
+  color: #eeeeff;
   background: transparent; }
 
 a:visited {
-  color: #fff; }
+  color: white; }
 
 a:hover {
-  color: #fff; }
+  color: #8888ff; }
 
 a:focus {
   outline: thin dotted;
-  color: #000022; }
+  color: #2222ff; }
 
 a:active {
-  color: #000088; }
+  color: #8888ff; }
 
 .grid {
   max-width: 1200px;
