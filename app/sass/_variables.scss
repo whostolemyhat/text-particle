@@ -8,10 +8,10 @@ $colorSecondary: orange;
 $baseFontSize: 16; // No px on this
 $baseLineHeight: 25px; 
 $baseFontFamily: Arial, Helvetica, sans-serif;
-$baseFontColor: #222;
+$baseFontColor: #fef;
 
 $headingFontFamily: Arial, Helvetica, sans-serif; 
-$headingColor: #222;
+$headingColor: #fff;
 
 $headingAlpha:                  32px;
 $headingBeta:                   24px;
@@ -21,7 +21,7 @@ $headingEpsilon:                13px;
 $headingZeta:                   11px;
 
 /* Links  */
-$linkColor: #00e;
+$linkColor: #eeeeff;
 $linkVisited: lighten($linkColor, 10);
 $linkHover: darken($linkColor, 20);
 $linkActive: darken($linkColor, 20);
