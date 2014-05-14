@@ -10,7 +10,7 @@ var Utility = (function() {
     }
 
     function randomNumber(min, max) {
-            return min + Math.random() * (max - min);
+        return min + Math.random() * (max - min);
     }
 
     // hex = colour, lum = % lighter
