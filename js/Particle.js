@@ -12,6 +12,8 @@ function Particle() {
     this.changeLetterThreshold = Utility.randomNumber(20, 150);
     this.changeLetterDelta = 0;
     this.age = 0;
+    this.alpha = 1;
+    this.alphaDelta = 0;
 
     this.update = function(ms) {
         // shrink
@@ -27,10 +29,17 @@ function Particle() {
         this.age += ms;
 
         this.changeLetterDelta += ms;
-        if(this.changeLetterDelta > this.changeLetterThreshold) {
+        if(this.changeLetterDelta >= this.changeLetterThreshold) {
             this.letter = Utility.pickLetter();
             this.colour = Utility.alterShade(this.colour, parseFloat(Utility.randomNumber(-0.3, 0.6)).toFixed(2));
             this.changeLetterDelta = 0;
+        }
+
+        this.alphaDelta += ms;
+        // TODO: magic number. Max age = 2500, fade = 0.05 so every 125ms fade slightly
+        if(this.alphaDelta >= 125) {
+            this.alpha -= 0.05;
+            this.alphaDelta = 0;
         }
     };
 
@@ -48,8 +57,10 @@ function Particle() {
         // ctx.fill();
 
         ctx.fillStyle = this.colour;
-        ctx.font = 'bold 16px arial';
+        ctx.font = 'bold 14px arial';
+        ctx.globalAlpha = this.alpha;
         ctx.fillText(this.letter, this.x, this.y);
+        ctx.globalAlpha = 1;
         // context.scale(3, 3);
         // context.fillText(pickLetter(), 48, 160);
 

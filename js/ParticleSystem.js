@@ -32,8 +32,6 @@ function ParticleSystem(ctx) {
 
             i++;
         }
-
-        console.log(this.particles);
     };
 
     this.update = function(frameDelay) {
