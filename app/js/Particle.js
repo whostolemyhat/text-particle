@@ -29,7 +29,7 @@ function Particle() {
         this.changeLetterDelta += ms;
         if(this.changeLetterDelta > this.changeLetterThreshold) {
             this.letter = Utility.pickLetter();
-            this.colour = Utility.alterShade(this.colour, parseFloat(Utility.randomNumber(-1, 1)).toFixed(2));
+            this.colour = Utility.alterShade(this.colour, parseFloat(Utility.randomNumber(-0.3, 0.6)).toFixed(2));
             this.changeLetterDelta = 0;
         }
     };
@@ -48,7 +48,7 @@ function Particle() {
         // ctx.fill();
 
         ctx.fillStyle = this.colour;
-        ctx.font = '16px arial';
+        ctx.font = 'bold 16px arial';
         ctx.fillText(this.letter, this.x, this.y);
         // context.scale(3, 3);
         // context.fillText(pickLetter(), 48, 160);

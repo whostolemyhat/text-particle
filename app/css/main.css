@@ -8,35 +8,19 @@
 /**
  * Correct `block` display not defined in IE 8/9.
  */
-/* line 11, ../sass/base/_normalise.scss */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
   display: block; }
 
 /**
  * Correct `inline-block` display not defined in IE 8/9.
  */
-/* line 30, ../sass/base/_normalise.scss */
-audio,
-canvas,
-video {
+audio, canvas, video {
   display: inline-block; }
 
 /**
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-/* line 41, ../sass/base/_normalise.scss */
 audio:not([controls]) {
   display: none;
   height: 0; }
@@ -45,9 +29,7 @@ audio:not([controls]) {
  * Address `[hidden]` styling not present in IE 8/9.
  * Hide the `template` element in IE, Safari, and Firefox < 22.
  */
-/* line 51, ../sass/base/_normalise.scss */
-[hidden],
-template {
+[hidden], template {
   display: none; }
 
 /* ==========================================================================
@@ -58,7 +40,6 @@ template {
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-/* line 66, ../sass/base/_normalise.scss */
 html {
   font-family: sans-serif;
   /* 1 */
@@ -70,7 +51,6 @@ html {
 /**
  * Remove default margin.
  */
-/* line 76, ../sass/base/_normalise.scss */
 body {
   margin: 0; }
 
@@ -80,23 +60,19 @@ body {
 /**
  * Remove the gray background color from active links in IE 10.
  */
-/* line 88, ../sass/base/_normalise.scss */
 a {
   background: transparent; }
 
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
  */
-/* line 96, ../sass/base/_normalise.scss */
 a:focus {
   outline: thin dotted; }
 
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-/* line 104, ../sass/base/_normalise.scss */
-a:active,
-a:hover {
+a:active, a:hover {
   outline: 0; }
 
 /* ==========================================================================
@@ -106,7 +82,6 @@ a:hover {
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari 5, and Chrome.
  */
-/* line 118, ../sass/base/_normalise.scss */
 h1 {
   font-size: 2em;
   margin: 0.67em 0; }
@@ -114,29 +89,24 @@ h1 {
 /**
  * Address styling not present in IE 8/9, Safari 5, and Chrome.
  */
-/* line 127, ../sass/base/_normalise.scss */
 abbr[title] {
   border-bottom: 1px dotted; }
 
 /**
  * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
  */
-/* line 135, ../sass/base/_normalise.scss */
-b,
-strong {
+b, strong {
   font-weight: bold; }
 
 /**
  * Address styling not present in Safari 5 and Chrome.
  */
-/* line 144, ../sass/base/_normalise.scss */
 dfn {
   font-style: italic; }
 
 /**
  * Address differences between Firefox and other browsers.
  */
-/* line 152, ../sass/base/_normalise.scss */
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -145,7 +115,6 @@ hr {
 /**
  * Address styling not present in IE 8/9.
  */
-/* line 162, ../sass/base/_normalise.scss */
 mark {
   background: #ff0;
   color: #000; }
@@ -153,51 +122,40 @@ mark {
 /**
  * Correct font family set oddly in Safari 5 and Chrome.
  */
-/* line 171, ../sass/base/_normalise.scss */
-code,
-kbd,
-pre,
-samp {
+code, kbd, pre, samp {
   font-family: monospace, serif;
   font-size: 1em; }
 
 /**
  * Improve readability of pre-formatted text in all browsers.
  */
-/* line 183, ../sass/base/_normalise.scss */
 pre {
   white-space: pre-wrap; }
 
 /**
  * Set consistent quote types.
  */
-/* line 191, ../sass/base/_normalise.scss */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019"; }
 
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-/* line 199, ../sass/base/_normalise.scss */
 small {
   font-size: 80%; }
 
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 207, ../sass/base/_normalise.scss */
-sub,
-sup {
+sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
 
-/* line 215, ../sass/base/_normalise.scss */
 sup {
   top: -0.5em; }
 
-/* line 219, ../sass/base/_normalise.scss */
 sub {
   bottom: -0.25em; }
 
@@ -207,14 +165,12 @@ sub {
 /**
  * Remove border when inside `a` element in IE 8/9.
  */
-/* line 231, ../sass/base/_normalise.scss */
 img {
   border: 0; }
 
 /**
  * Correct overflow displayed oddly in IE 9.
  */
-/* line 239, ../sass/base/_normalise.scss */
 svg:not(:root) {
   overflow: hidden; }
 
@@ -224,7 +180,6 @@ svg:not(:root) {
 /**
  * Address margin not present in IE 8/9 and Safari 5.
  */
-/* line 251, ../sass/base/_normalise.scss */
 figure {
   margin: 0; }
 
@@ -234,7 +189,6 @@ figure {
 /**
  * Define consistent border, margin, and padding.
  */
-/* line 263, ../sass/base/_normalise.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -244,7 +198,6 @@ fieldset {
  * 1. Correct `color` not being inherited in IE 8/9.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-/* line 274, ../sass/base/_normalise.scss */
 legend {
   border: 0;
   /* 1 */
@@ -256,11 +209,7 @@ legend {
  * 2. Correct font size not being inherited in all browsers.
  * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
  */
-/* line 285, ../sass/base/_normalise.scss */
-button,
-input,
-select,
-textarea {
+button, input, select, textarea {
   font-family: inherit;
   /* 1 */
   font-size: 100%;
@@ -272,9 +221,7 @@ textarea {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 299, ../sass/base/_normalise.scss */
-button,
-input {
+button, input {
   line-height: normal; }
 
 /**
@@ -283,9 +230,7 @@ input {
  * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
  * Correct `select` style inheritance in Firefox 4+ and Opera.
  */
-/* line 311, ../sass/base/_normalise.scss */
-button,
-select {
+button, select {
   text-transform: none; }
 
 /**
@@ -295,11 +240,7 @@ select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 324, ../sass/base/_normalise.scss */
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
@@ -308,18 +249,14 @@ input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-/* line 336, ../sass/base/_normalise.scss */
-button[disabled],
-html input[disabled] {
+button[disabled], html input[disabled] {
   cursor: default; }
 
 /**
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-/* line 346, ../sass/base/_normalise.scss */
-input[type="checkbox"],
-input[type="radio"] {
+input[type="checkbox"], input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -330,7 +267,6 @@ input[type="radio"] {
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-/* line 358, ../sass/base/_normalise.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -343,17 +279,13 @@ input[type="search"] {
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-/* line 370, ../sass/base/_normalise.scss */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-/* line 379, ../sass/base/_normalise.scss */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
+button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
@@ -361,7 +293,6 @@ input::-moz-focus-inner {
  * 1. Remove default vertical scrollbar in IE 8/9.
  * 2. Improve readability and alignment in all browsers.
  */
-/* line 390, ../sass/base/_normalise.scss */
 textarea {
   overflow: auto;
   /* 1 */
@@ -374,75 +305,47 @@ textarea {
 /**
  * Remove most spacing between table cells.
  */
-/* line 403, ../sass/base/_normalise.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
 @media print {
-  /* line 2, ../sass/base/_print.scss */
+  /*
+     * Don't show links for images, or javascript/internal links
+     */
+  @page {
+    margin: 0.5cm; }
+
   * {
     background: transparent !important;
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important; }
-
-  /* line 9, ../sass/base/_print.scss */
-  a,
-  a:visited {
+  a, a:visited {
     text-decoration: underline; }
-
-  /* line 14, ../sass/base/_print.scss */
   a[href]:after {
     content: " (" attr(href) ")"; }
-
-  /* line 18, ../sass/base/_print.scss */
   abbr[title]:after {
     content: " (" attr(title) ")"; }
-
-  /*
-   * Don't show links for images, or javascript/internal links
-   */
-  /* line 26, ../sass/base/_print.scss */
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
     content: ""; }
-
-  /* line 32, ../sass/base/_print.scss */
-  pre,
-  blockquote {
+  pre, blockquote {
     border: 1px solid #999;
     page-break-inside: avoid; }
-
-  /* line 38, ../sass/base/_print.scss */
   thead {
     display: table-header-group;
     /* h5bp.com/t */ }
-
-  /* line 42, ../sass/base/_print.scss */
-  tr,
-  img {
+  tr, img {
     page-break-inside: avoid; }
-
-  /* line 47, ../sass/base/_print.scss */
   img {
     max-width: 100% !important; }
-
-  @page {
-    margin: 0.5cm; }
-  /* line 55, ../sass/base/_print.scss */
-  p,
-  h2,
-  h3 {
+  p, h2, h3 {
     orphans: 3;
     widows: 3; }
-
-  /* line 62, ../sass/base/_print.scss */
-  h2,
-  h3 {
+  h2, h3 {
     page-break-after: avoid; } }
+
 /* ==========================================================================
    Mixins
    ========================================================================== */
@@ -466,15 +369,12 @@ table {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 16, ../sass/base/_helpers.scss */
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, .clearfix:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
 
-/* line 22, ../sass/base/_helpers.scss */
 .clearfix:after {
   clear: both; }
 
@@ -482,7 +382,6 @@ table {
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
-/* line 31, ../sass/base/_helpers.scss */
 .clearfix {
   *zoom: 1; }
 
@@ -491,106 +390,79 @@ table {
    ========================================================================== */
 /* Base
    ========================================================================== */
-/* line 8, ../sass/modules/_typography.scss */
-html,
-button,
-input,
-select,
-textarea {
+html, button, input, select, textarea {
   font-size: 16px;
   font-size:  1rem;
   font-family: Arial, Helvetica, sans-serif; }
 
-/* line 17, ../sass/modules/_typography.scss */
 body {
   line-height: 25px;
   line-height:  1.5625rem; }
 
 /* Headings
    ========================================================================== */
-/* line 24, ../sass/modules/_typography.scss */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
-  color: #222222;
+  color: #222;
   font-weight: bold; }
 
-/* line 35, ../sass/modules/_typography.scss */
-h1,
-.alpha {
+h1, .alpha {
   font-size: 32px;
   font-size:  2rem; }
 
-/* line 40, ../sass/modules/_typography.scss */
-h2,
-.beta {
+h2, .beta {
   font-size: 24px;
   font-size:  1.5rem; }
 
-/* line 45, ../sass/modules/_typography.scss */
-h3,
-.gamma {
+h3, .gamma {
   font-size: 19px;
   font-size:  1.1875rem; }
 
-/* line 50, ../sass/modules/_typography.scss */
-h4,
-.delta {
+h4, .delta {
   font-size: 16px;
   font-size:  1rem; }
 
-/* line 55, ../sass/modules/_typography.scss */
-h5,
-.epsilon {
+h5, .epsilon {
   font-size: 13px;
   font-size:  0.8125rem; }
 
-/* line 60, ../sass/modules/_typography.scss */
-h6,
-.zeta {
+h6, .zeta {
   font-size: 11px;
   font-size:  0.6875rem; }
 
 /* Links
    ========================================================================== */
-/* line 68, ../sass/modules/_typography.scss */
 a {
-  color: #0000ee;
+  color: #00e;
   background: transparent; }
 
-/* line 73, ../sass/modules/_typography.scss */
 a:visited {
   color: #2222ff; }
 
-/* line 77, ../sass/modules/_typography.scss */
 a:hover {
   color: #000088; }
 
-/* line 81, ../sass/modules/_typography.scss */
 a:focus {
   outline: thin dotted;
   color: #000022; }
 
-/* line 86, ../sass/modules/_typography.scss */
 a:active {
   color: #000088; }
 
-/* line 1, ../sass/modules/_grid.scss */
 .grid {
   max-width: 1200px;
-  margin: auto; }
+  margin: auto;
+  color: #fff; }
 
-/* line 1, ../sass/modules/_nav.scss */
+h1, a {
+  color: white; }
+
 .nav {
   z-index: 100; }
 
-/* line 1, ../sass/modules/_canvas.scss */
 #canvas {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1; }
+  z-index: -1;
+  background: #461a97; }

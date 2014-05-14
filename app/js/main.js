@@ -28,7 +28,7 @@ function init() {
 
     // draw(context);
     var mousePos = {x: canvas.width / 2, y: canvas.height / 2 };
-    var colour = '#52ef1d';
+    var colour = '#7d48e0';
     var particleSystem = new ParticleSystem(context);
     
     canvas.click(function(e) {

@@ -1,12 +1,12 @@
 function ParticleSystem(ctx) {
     // begin particle system (controller)
     this.particles = [];
-    this.maxAge = 1000;
+    this.maxAge = 2500;
 
     this.createExplosion = function(x, y, colour) {
         // var minSize = 3;
         // var maxSize = 18;
-        var count = 20;
+        var count = 40;
         var minSpeed = 70;
         var maxSpeed = 280;
         // var minScaleSpeed = 2;
@@ -40,7 +40,7 @@ function ParticleSystem(ctx) {
         // console.log(frameDelay);
         // this.delta += frameDelay;
         // if(this.delta > this.maxAge)
-        ctx.fillStyle = '#fff';
+        ctx.fillStyle = '#461a97';
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
         for(var i = 0; i < this.particles.length; i++) {
