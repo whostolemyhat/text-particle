@@ -465,4 +465,11 @@ h1, a {
   top: 0;
   left: 0;
   z-index: -1;
-  background: #103057; }
+  background: #103057;
+  background: -moz-radial-gradient(center, ellipse cover, #103057 15%, #103057 15%, #0b203a 98%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(15%, #103057), color-stop(15%, #103057), color-stop(98%, #0b203a));
+  background: -webkit-radial-gradient(center, ellipse cover, #103057 15%, #103057 15%, #0b203a 98%);
+  background: -o-radial-gradient(center, ellipse cover, #103057 15%, #103057 15%, #0b203a 98%);
+  background: -ms-radial-gradient(center, ellipse cover, #103057 15%, #103057 15%, #0b203a 98%);
+  background: radial-gradient(ellipse at center, #103057 15%, #103057 15%, #0b203a 98%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#103057', endColorstr='#0b203a',GradientType=1 ); }
