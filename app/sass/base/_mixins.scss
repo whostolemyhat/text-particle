@@ -1,0 +1,173 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+@mixin min-height($height) {
+   min-height: $height;
+   height: auto !important; /* ie6 */
+   height: $height; /* ie6 */
+}
+
+
+/* Calculations
+   ========================================================================== */
+
+@mixin percentage ($value1, $value2) {
+    width: ($value1 / $value2)*100%;
+}
+
+@mixin calc($property, $expression) {
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}
+
+/* CSS3
+   ========================================================================== */
+
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model; 
+        -moz-box-sizing: $box-model; 
+            box-sizing: $box-model;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box; 
+} 
+
+@mixin transition($range: all, $time: 1s, $ease: ease-in-out) {
+    -webkit-transition: $range $time $ease;
+    -moz-transition:    $range $time $ease; 
+    transition:         $range $time $ease;
+}
+
+@mixin opacity($value){
+  $IEValue: $value*100;
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+  filter: alpha(opacity=$IEValue);
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  transform: $transform;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@mixin animation($animation) {
+  -webkit-animation: #{$animation};
+    -moz-animation: #{$animation};
+    -ms-animation: #{$animation};
+    animation: #{$animation};
+}
+
+@mixin placeholder { 
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+  .placeholder                {@content}    
+}
+
+
+@mixin box-shadow($str) {
+    -webkit-box-shadow: #{$str};
+    -moz-box-shadow: #{$str};
+    -o-box-shadow: #{$str};
+    -ms-box-shadow: #{$str};
+    box-shadow: #{$str};
+}
+
+/* Helpers
+   ========================================================================== */
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin inline-block() {
+    display: inline-block;
+    .lt-ie8 & {
+        display: inline;
+        zoom: 1;
+        margin-right: 0.25em; // Restore whitespace
+    }
+
+}
+
+/* Rem Fallbacks
+   ========================================================================== */
+   
+@function strip-unit($num) {
+    @if $num == auto {
+        @return $num;
+    }
+    @else {
+        @return $num / ($num * 0 + 1);
+    }
+}
+
+@mixin px($property, $px-values) {
+
+    $rem-values: unquote("");
+
+    @each $value in $px-values {
+        $value: strip-unit($value);
+        @if $value == 0 or type-of($value) == "string" or type-of($value) == "color" {
+            $rem-values: append($rem-values, $value);
+        }
+        @else {
+            $rem-values: append($rem-values, ($value/$baseFontSize)*1rem);
+        }
+    }
+
+    #{$property}: $px-values;
+    #{$property}: $rem-values;
+}
+
+// rem
+// convert rem values to px
+// returns px fallback and rem values
+// property: margin or padding etc
+// rem-values: one or more rem value
+@mixin rem($property, $rem-values) {
+    $px-values: unquote("");
+
+    @each $value in $rem-values {
+        $value: strip-unit($value);
+        @if $value == 0 or type-of($value) == "string" or type-of($value) == "color" {
+            $px-values: append($px-values, $value);
+        }
+        @else {
+            $px-values: append($px-values, ($value*$baseFontSize)*1px);
+        }
+    }
+
+    #{$property}: $px-values;
+    #{$property}: $rem-values;
+}

@@ -3,7 +3,6 @@
 module.exports = function(grunt) {
 
     require('load-grunt-tasks')(grunt);
-    require('time-grunt')(grunt);
 
     grunt.initConfig({
         app: 'app', // path to app files
@@ -18,10 +17,10 @@ module.exports = function(grunt) {
                 files: [
                     '<%= app %>/sass/**/*.scss',
                 ],
-                tasks: ['newer:sass:dev']
+                tasks: ['sass:dev']
             },
 
-            scripts: {
+            js: {
                 files: [
                     '<%= app %>/js/**/*.js'
                 ],
@@ -69,10 +68,16 @@ module.exports = function(grunt) {
 
         clean: [ '<%= app %>/build/' ],
 
+        tag: {
+            banner: '/* <%= pkg.name %>\n*/' +
+                    '/* v<%= pkg.version %>\n*/' +
+                    '/* <%= pkg.author %>\n*/' +
+                    '/* Last updated: <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+        },
+
         uglify: {
             options: {
-                banner: '/********************** <%= pkg.name %> - v<%= pkg.version %> - ' +
-                    '<%= grunt.template.today("dd-mm-yyyy") %> **********************/\n'
+                banner: '<%= tag.banner %>'
             },
             dist: {
                 src: ['<%= app %>/js/*.js'], // not vendor files
@@ -114,7 +119,6 @@ module.exports = function(grunt) {
             },
             livereload: {
                 options: {
-                    open: true,
                     base: ['<%= app %>']
                 }
             }
@@ -124,5 +128,5 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['connect:livereload', 'watch']);
     grunt.registerTask('lint', ['jshint', 'csslint:lax']);
-    grunt.registerTask('build', ['jshint', 'clean', 'newer:uglify', 'sass:prod']);
+    grunt.registerTask('build', ['jshint', 'clean', 'uglify', 'sass:prod']);
 };

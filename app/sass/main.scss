@@ -1,15 +1,7 @@
-@import "modules/_normalise";
-@import "modules/_helpers";
+@import "_variables";
+@import "base/_base";
 
-html,
-button,
-input,
-select,
-textarea {
-    color: #444;
-}
+// modules
+@import "modules/_typography";
 
-html {
-    font-size: 1em;
-    line-height: 1.4;
-}
+// pages
