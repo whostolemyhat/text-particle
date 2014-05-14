@@ -433,14 +433,14 @@ h6, .zeta {
 /* Links
    ========================================================================== */
 a {
-  color: #00e;
+  color: #fff;
   background: transparent; }
 
 a:visited {
-  color: #2222ff; }
+  color: #fff; }
 
 a:hover {
-  color: #000088; }
+  color: #fff; }
 
 a:focus {
   outline: thin dotted;
@@ -465,4 +465,4 @@ h1, a {
   top: 0;
   left: 0;
   z-index: -1;
-  background: #461a97; }
+  background: #103057; }
