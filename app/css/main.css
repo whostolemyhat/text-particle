@@ -455,7 +455,13 @@ a:active {
   color: #fff; }
 
 h1, a {
-  color: white; }
+  color: white;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 .nav {
   z-index: 100; }

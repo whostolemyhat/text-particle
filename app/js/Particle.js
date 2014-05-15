@@ -3,7 +3,7 @@ function Particle() {
     this.scale = 1;
     this.x = 0;
     this.y = 0;
-    this.radius = 20;
+    // this.radius = 20;
     this.colour = '#000';
     this.velocityX = 0;
     this.velocityY = 0;
@@ -14,6 +14,7 @@ function Particle() {
     this.age = 0;
     this.alpha = 1;
     this.alphaDelta = 0;
+    this.alive = true;
 
     this.update = function(ms) {
         // shrink

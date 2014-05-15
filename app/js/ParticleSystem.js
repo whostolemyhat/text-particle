@@ -1,7 +1,10 @@
+/* global Particle, Utility */
+
 function ParticleSystem(ctx) {
     // begin particle system (controller)
     this.particles = [];
     this.maxAge = 2500;
+    var i = 0;
 
     this.createExplosion = function(x, y, colour) {
         // var minSize = 3;
@@ -11,15 +14,17 @@ function ParticleSystem(ctx) {
         var maxSpeed = 280;
         // var minScaleSpeed = 2;
         // var maxScaleSpeed = 6;
-        var i = 0;
+        // var i = 0;
 
         for(var angle = 0; angle < 360; angle += Math.round(360/count)) {
-
+            // TODO: get from pool
             var particle = new Particle();
+            // var particle = this.getParticle();
+            particle.alive = true;
             particle.id = i;
             particle.x = x;
             particle.y = y;
-            this.age = 0;
+            particle.age = 0;
             // particle.radius = Utility.randomNumber(minSize, maxSize);
             particle.colour = Utility.alterShade(colour, parseFloat(Utility.randomNumber(-1, 1)).toFixed(2));
             // particle.scaleSpeed = Utility.randomNumber(minScaleSpeed, maxScaleSpeed);
@@ -35,9 +40,6 @@ function ParticleSystem(ctx) {
     };
 
     this.update = function(frameDelay) {
-        // console.log(frameDelay);
-        // this.delta += frameDelay;
-        // if(this.delta > this.maxAge)
         ctx.fillStyle = '#461a97';
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
@@ -48,6 +50,7 @@ function ParticleSystem(ctx) {
                 particle.draw(ctx);
             } else {
                 this.particles.splice(particle.id, 1);
+                // particle.alive = false;
             }
         }
 
@@ -55,5 +58,17 @@ function ParticleSystem(ctx) {
         if(this.particles.length < 2) {
             this.particles = [];
         }
+    };
+
+    this.getParticle = function() {
+        // loop through particles
+        for(var i = 0; i < this.particles.length; i++) {
+            if(!this.particles[i].alive) {
+                return this.particles[i];
+            }
+        }
+        return new Particle();
+        // if this is dead, return
+        // else return new particle
     };
 }
